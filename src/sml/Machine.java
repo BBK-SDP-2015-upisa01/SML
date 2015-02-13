@@ -32,7 +32,8 @@ public class Machine {
 		// print String arguments passed to the main
         //System.out.println("String arguments passed while running this Java Program : ");
         //for(String argument : args){ System.out.print(argument+ " ");}
-        System.out.println("INSTRUCTION:\n In this programm the user neeed to pass <programmeInst.txt> as programme argument \n");
+        System.out.println("INSTRUCTION:\n 1| Lombook must be install if using eclipse \n 2| In this programm the user neeed to pass <programmeInst.txt> as programme argument \n"
+        		+"In Eclipse Right click on Machine.java > run as > Run configuration > argument tab > in programme enviroment you must type: programmeInst.txt \n\n");
         
 		Machine m = new Machine();
 		
