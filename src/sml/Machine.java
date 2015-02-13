@@ -32,12 +32,12 @@ public class Machine {
 		// print String arguments passed to the main
         //System.out.println("String arguments passed while running this Java Program : ");
         //for(String argument : args){ System.out.print(argument+ " ");}
-        System.out.println(" I pass programmeInst.txt to Translator t as a sequence of instruction");
-		
+        System.out.println("INSTRUCTION:\n In this programm the user neeed to pass <programmeInst.txt> as programme argument \n");
+        
 		Machine m = new Machine();
 		
-		//Translator t = new Translator(args[0]);//_____________________________yyy
-		Translator t = new Translator("programmeInst.txt");
+		Translator t = new Translator(args[0]);//_____________________________yyy
+		//Translator t = new Translator("programmeInst.txt");
 		t.readAndTranslate(m.getLabels(), m.getProg());
 
 		System.out.println("Here is the program; it has " + m.getProg().size() + " instructions.");
