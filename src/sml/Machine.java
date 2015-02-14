@@ -32,16 +32,23 @@ public class Machine {
 		// print String arguments passed to the main
         //System.out.println("String arguments passed while running this Java Program : ");
         //for(String argument : args){ System.out.print(argument+ " ");}
-        System.out.println("INSTRUCTION:\n 1| Lombook must be install if using eclipse \n 2| In this programm the user neeed to pass <programmeInst.txt> as programme argument \n"
+        System.out.println("INSTRUCTION:\n 1| Lombook must be install if using eclipse \n 2| In this programm the user need to pass <programmeInst.txt> as programme argument \n"
         		+"In Eclipse Right click on Machine.java > run as > Run configuration > argument tab > in programme enviroment you must type: programmeInst.txt \n\n");
         
 		Machine m = new Machine();
-		
-		Translator t = new Translator(args[0]);//_____________________________yyy
+		Translator t;
+		try {
+			t = new Translator(args[0]);
+			t.readAndTranslate(m.getLabels(), m.getProg());	
+		} catch (Exception ex) {
+			System.out.println("*** User need to pass programmeInst.txt as programme argument \n*** Else 0 istruction will be passed to the programme *** ");
+			return;
+		}
+		//Translator t = new Translator(args[0]);//____________________________
 		//Translator t = new Translator("programmeInst.txt");
-		t.readAndTranslate(m.getLabels(), m.getProg());
 
-		System.out.println("Here is the program; it has " + m.getProg().size() + " instructions.");
+		if(m.getProg().size()==0){System.out.println("\nSorry The program has " + m.getProg().size() + " instructions.");return;}
+		System.out.println("\nHere is the program; it has " + m.getProg().size() + " instructions.");
 		System.out.println(m);
 
 		System.out.println("Beginning program execution.");
