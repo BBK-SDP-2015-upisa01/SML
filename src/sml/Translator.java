@@ -75,7 +75,7 @@ public class Translator {
 				}
 			}
 		} catch (IOException ioE) {
-			System.out.println("File: IO error " + ioE.getMessage());
+			System.out.println("File: IO error " + ioE.getMessage()+ "\nPlease enter <programmeInst.txt> as programme argument");
 			return false;
 		}
 		return true;
@@ -136,7 +136,7 @@ public class Translator {
 			// New instruction
 			instruction = (Instruction) constructor.newInstance(parameters);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage()+ "++++++++");
 		}
         return instruction;
 	}	
